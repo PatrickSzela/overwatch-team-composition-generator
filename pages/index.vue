@@ -393,6 +393,11 @@ export default Vue.extend({
       const slot = this.selectedTeamSlotKey;
       this.selectedTeamSlotKey = '';
       this.selectedTeamSlotKey = slot;
+
+      if (this.selectedTeamSlot.hero) {
+        this.selectedHeroKey = this.selectedTeamSlot.hero.id;
+      }
+
       this.$forceUpdate();
     },
     onTeamCompositionItemPinned(slot: CompositionSlot) {
