@@ -23,7 +23,7 @@ export default Vue.extend({
   },
   computed: {
     url(): string {
-      return 'url(' + require('~/assets/images/' + this.icon + '.svg') + ')';
+      return 'url(' + require('~/assets/images/' + this.icon + '.svg?url') + ')';
 
       // console.log(require('~/assets/images/' + this.type + '.svg'));
       // return require('~/assets/images/' + this.type + '.svg?url');

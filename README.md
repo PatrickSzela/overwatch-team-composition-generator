@@ -1,6 +1,6 @@
 # Overwatch Team Composition Generator
 
-Small website that allows the user to create team composition of all heroes from Overwatch.
+Small website made for someone who should not be named that allows the user to create team composition of all heroes from Overwatch.
 
 ## Build Setup
 
