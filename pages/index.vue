@@ -115,7 +115,7 @@
             class="mdc-button--secondary select-hero-button"
             :ripple="false"
             raised
-            title="Choose currently selected hero and go to the next slot"
+            title="Choose currently selected hero"
             :disabled="
               !isHeroAllowed(selectedHero) &&
               (selectedTeamSlot && selectedTeamSlot.hero ? selectedTeamSlot.hero.id !== selectedHeroKey : true)
@@ -338,21 +338,21 @@ export default Vue.extend({
 
         // this.pinnedSlots.push(this.selectedTeamSlot);
 
-        const slot = this.selectedTeamSlotKey.split('_').map((element) => Number(element));
+        // const slot = this.selectedTeamSlotKey.split('_').map((element) => Number(element));
 
-        slot[1] += 1;
+        // slot[1] += 1;
 
-        if (slot[1] > this.teams[slot[0]].slots.length - 1) {
-          slot[1] = 0;
-          slot[0] += 1;
-        }
+        // if (slot[1] > this.teams[slot[0]].slots.length - 1) {
+        //   slot[1] = 0;
+        //   slot[0] += 1;
+        // }
 
-        if (slot[0] > this.teams.length - 1) {
-          slot[0] = 0;
-          slot[1] = 0;
-        }
+        // if (slot[0] > this.teams.length - 1) {
+        //   slot[0] = 0;
+        //   slot[1] = 0;
+        // }
 
-        this.selectedTeamSlotKey = `${slot[0]}_${slot[1]}`;
+        // this.selectedTeamSlotKey = `${slot[0]}_${slot[1]}`;
 
         this.$forceUpdate();
       }
