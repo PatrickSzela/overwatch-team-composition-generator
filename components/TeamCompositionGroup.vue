@@ -4,7 +4,7 @@
       <m-button
         class="team-composition-group__fill-randomly"
         :ripple="false"
-        title="Fill empty slots with randomly selected heroes. If every slot is already filled, will randomly reselect hero for every slot."
+        title="Fill every unpinned slot with randomly selected set of heroes"
         @click="fillRandomly"
       >
         Fill randomly

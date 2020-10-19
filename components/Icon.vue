@@ -1,5 +1,12 @@
 <template>
-  <div class="icon" :class="{ 'icon--outlined': outlined }" :style="{ width: size, height: size }" v-bind="$attrs">
+  <div
+    class="icon"
+    :class="[`icon--${icon}`, { 'icon--outlined': outlined, 'icon--toggled-off': !toggled }]"
+    :style="{ width: size, height: size }"
+    :title="title"
+    v-bind="$attrs"
+    @click="$emit('click', $event)"
+  >
     <div class="icon__icon" :style="{ maskImage: url }"></div>
   </div>
 </template>
@@ -19,6 +26,14 @@ export default Vue.extend({
     outlined: {
       type: Boolean,
       default: false
+    },
+    toggled: {
+      type: Boolean,
+      default: true
+    },
+    title: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -39,6 +54,7 @@ export default Vue.extend({
   width: 24px;
   height: 24px;
   filter: drop-shadow(0 0 1.5px rgba(0, 0, 0, 0.3));
+  transition: opacity 75ms ease-in-out;
 
   &__icon {
     background-color: white;
@@ -61,6 +77,20 @@ export default Vue.extend({
 
     #{$icon}__icon {
       mask-size: 50%;
+    }
+  }
+
+  &--toggled-off {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--pin {
+    #{$icon}__icon {
+      transform: rotate(45deg);
     }
   }
 }

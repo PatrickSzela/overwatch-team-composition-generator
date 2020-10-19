@@ -29,6 +29,8 @@
             :name="slot.hero ? slot.hero.name : ''"
             :side="teamKey ? 'right' : 'left'"
             :allowed-types="slot.allowedTypes"
+            :pinned="pinnedSlots.includes(slot)"
+            @pinned.stop="onTeamCompositionItemPinned(slot)"
           >
           </team-composition-item>
         </team-composition-group>
@@ -174,7 +176,8 @@ export default Vue.extend({
       selectedCompositionKey: '2_2_2',
       loadingState: LoadingStates.Finished,
       fullBodyImage: new Image(),
-      isScreenTooSmall: true
+      isScreenTooSmall: true,
+      pinnedSlots: [] as Array<CompositionSlot>
     };
   },
   computed: {
@@ -333,6 +336,8 @@ export default Vue.extend({
       ) {
         this.selectedTeamSlot.hero = this.selectedHero;
 
+        // this.pinnedSlots.push(this.selectedTeamSlot);
+
         const slot = this.selectedTeamSlotKey.split('_').map((element) => Number(element));
 
         slot[1] += 1;
@@ -371,14 +376,14 @@ export default Vue.extend({
       return Object.fromEntries(filtered);
     },
     isHeroAllowed(hero: Hero): boolean {
-      // return Object.keys(Object.fromEntries(filtered)).includes(hero.id);
       return Object.keys(this.allowedHeroesInSelectedSlot).includes(hero.id);
     },
     onFillRandomly(team: Composition) {
-      const allSlotsFilled = !team.slots.filter((element) => !element.hero).length;
+      const allSlotsFilled = !team.slots.filter((element) => !element.hero && !this.pinnedSlots.includes(element))
+        .length;
 
       team.slots.forEach((element) => {
-        if (element.hero && !allSlotsFilled) return;
+        if ((element.hero && !allSlotsFilled) || this.pinnedSlots.includes(element)) return;
 
         const allowedHeroes = this.allowedHeroes(team, element);
         const hero = heroes[Object.keys(allowedHeroes)[Math.floor(Math.random() * Object.keys(allowedHeroes).length)]];
@@ -389,20 +394,15 @@ export default Vue.extend({
       this.selectedTeamSlotKey = '';
       this.selectedTeamSlotKey = slot;
       this.$forceUpdate();
+    },
+    onTeamCompositionItemPinned(slot: CompositionSlot) {
+      if (!this.pinnedSlots.includes(slot)) {
+        this.pinnedSlots.push(slot);
+      } else {
+        this.pinnedSlots = this.pinnedSlots.filter((item) => item !== slot);
+      }
     }
-    // heroToId(hero: Hero): string {
-    //   return (
-    //     Object.keys(heroes).find((key) => {
-    //       return heroes[key] === hero;
-    //     }) || ''
-    //   );
-    // }
   },
-  // head() {
-  //   return {
-  //     title: 'Select a Hero'
-  //   };
-  // },
   layout: 'fullscreen'
 });
 </script>

@@ -1,20 +1,20 @@
 <template>
-  <label class="team-composition-item team-composition-item" :class="classes" @click="onClick">
-    <input
-      :id="value"
-      v-model="innerChecked"
-      type="radio"
-      :value="value"
-      class="team-composition-item__input"
-      v-bind="$attrs"
-    />
-
+  <div class="team-composition-item team-composition-item" :class="classes" @click="onClick">
     <!-- <overwatch-spinner v-if="!hero" light></overwatch-spinner> -->
     <h1 v-if="!hero">?</h1>
 
     <div class="team-composition-item__background">
       <div class="team-composition-item__portrait" :style="{ backgroundImage: portrait }"></div>
     </div>
+
+    <icon
+      class="team-composition-item__icon team-composition-item__icon--pin"
+      size="18px"
+      icon="pin"
+      :title="pinned ? 'Unpin hero' : 'Pin hero'"
+      :toggled="pinned"
+      @click.stop="onPin"
+    />
 
     <div class="team-composition-item__icons">
       <icon
@@ -23,6 +23,7 @@
         class="team-composition-item__icon"
         size="14px"
         :icon="heroType"
+        :title="heroTypes[heroType]"
       />
     </div>
 
@@ -32,13 +33,14 @@
     >
       <span class="team-composition-item__label">{{ name }}</span>
     </div>
-  </label>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 // import OverwatchSpinner from '~/components/OverwatchSpinner.vue';
 import Icon from '~/components/Icon.vue';
+import { HeroTypes } from '~/assets/heroes';
 
 export default Vue.extend({
   components: {
@@ -76,6 +78,10 @@ export default Vue.extend({
       default() {
         return [];
       }
+    },
+    pinned: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -96,11 +102,17 @@ export default Vue.extend({
       set(value: string) {
         this.$emit('change', value);
       }
+    },
+    heroTypes() {
+      return Object.fromEntries(Object.entries(HeroTypes).map((element) => element.reverse()));
     }
   },
   methods: {
     onClick() {
       this.innerChecked = this.value;
+    },
+    onPin(e: Event) {
+      this.$emit('pinned', e, !this.pinned);
     }
   }
 });
@@ -261,9 +273,15 @@ $orange: #f89e1b;
     right: 8px;
     bottom: 30px;
     margin: 0 -4px;
+  }
 
-    .icon {
-      margin: 0 2px;
+  &__icon {
+    margin: 0 2px;
+
+    &--pin {
+      position: absolute;
+      top: 4px;
+      right: -6px;
     }
   }
 
@@ -325,6 +343,10 @@ $orange: #f89e1b;
       &__icons {
         left: 8px;
         right: auto;
+      }
+
+      &__icon--pin {
+        right: 8px;
       }
     }
 
