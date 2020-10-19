@@ -313,13 +313,13 @@ export default Vue.extend({
   methods: {
     heroFullBody: (name: string) => {
       if (!name) return '';
-      return 'url(' + require('~/assets/heroes/' + name + '/full-body.png?resize&size=3840') + ')'; // converting to webp doesn't work after resizing (https://github.com/bazzite/nuxt-optimized-images/issues/2)
+      return 'url(' + require('~/assets/heroes/' + name + '/full-body.png?webp') + ')'; // converting to webp doesn't work after resizing (https://github.com/bazzite/nuxt-optimized-images/issues/2)
     },
     preloadFullBody(image: string) {
       if (this.isScreenTooSmall) return;
 
       this.loadingState = LoadingStates.Loading;
-      this.fullBodyImage.src = require('assets/heroes/' + image + '/full-body.png?resize&size=3840');
+      this.fullBodyImage.src = require('assets/heroes/' + image + '/full-body.png?webp');
     },
     onWindowResize() {
       this.isScreenTooSmall = window.innerWidth < 1200;

@@ -1,5 +1,5 @@
 <template>
-  <div class="overwatch-spinner" :class="classes">
+  <div class="overwatch-spinner" :class="classes" v-bind="$attrs">
     <div class="overwatch-spinner__container">
       <div v-for="i in 7" :key="i" class="overwatch-spinner__hexagon"></div>
     </div>

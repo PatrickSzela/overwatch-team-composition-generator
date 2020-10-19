@@ -2,6 +2,8 @@
   <div class="layout layout--fullscreen">
     <fullscreen-background :src="image" :color="color" darken blur></fullscreen-background>
 
+    <overwatch-spinner v-if="loadingState === loadingStates.Loading" class="map-spinner" light></overwatch-spinner>
+
     <nuxt />
 
     <browser-not-supported-snackbar></browser-not-supported-snackbar>
@@ -12,7 +14,14 @@
 import Vue from 'vue';
 import BrowserNotSupportedSnackbar from '~/components/BrowserNotSupportedSnackbar.vue';
 import FullscreenBackground from '~/components/FullscreenBackground.vue';
+import OverwatchSpinner from '~/components/OverwatchSpinner.vue';
 import maps, { Map } from '~/assets/maps';
+
+export enum LoadingStates {
+  Loading = 'loading',
+  Failed = 'failed',
+  Finished = 'finished'
+}
 
 // function isMap(map: string) {
 //   return Object.prototype.hasOwnProperty.call(maps, map);
@@ -21,9 +30,20 @@ import maps, { Map } from '~/assets/maps';
 export default Vue.extend({
   components: {
     BrowserNotSupportedSnackbar,
-    FullscreenBackground
+    FullscreenBackground,
+    OverwatchSpinner
+  },
+  data() {
+    return {
+      background: new Image(),
+      loadingState: LoadingStates.Finished,
+      image: ''
+    };
   },
   computed: {
+    loadingStates() {
+      return LoadingStates;
+    },
     maps(): { [index: string]: Map } {
       return maps;
     },
@@ -35,13 +55,38 @@ export default Vue.extend({
     },
     color(): string {
       return require('~/assets/maps/' + this.mapKey + '/background.jpg?lqip-colors')[0];
-    },
-    image(): string {
+    }
+  },
+  watch: {
+    mapKey: {
+      handler(value: string) {
+        if (!value) return;
+        this.fetchBackground();
+
+        // if (this.selectedTeamSlot) {
+        //   this.selectedTeamSlot.hero = heroes[value];
+        // }
+      },
+      immediate: true
+    }
+  },
+  mounted() {
+    this.background.onload = () => {
+      this.loadingState = LoadingStates.Finished;
+      this.image = this.background.src;
+    };
+    this.background.onerror = () => {
+      this.loadingState = LoadingStates.Failed;
+    };
+  },
+  methods: {
+    fetchBackground() {
+      this.loadingState = LoadingStates.Loading;
       // eslint-disable-next-line no-undef
       if (Modernizr.webp) {
-        return require('~/assets/maps/' + this.mapKey + '/background.jpg?webp');
+        this.background.src = require('~/assets/maps/' + this.mapKey + '/background.jpg?webp');
       } else {
-        return require('~/assets/maps/' + this.mapKey + '/background.jpg');
+        this.background.src = require('~/assets/maps/' + this.mapKey + '/background.jpg');
       }
     }
   }
@@ -82,5 +127,15 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
   }
+}
+
+.map-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  opacity: 0.2;
+  z-index: -1;
 }
 </style>
