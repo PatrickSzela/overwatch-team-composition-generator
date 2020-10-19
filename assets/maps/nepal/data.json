@@ -1,0 +1,15 @@
+{
+  "name": "Nepal",
+  "type": "control",
+  "points": {
+    "village": {
+      "name": "Village"
+    },
+    "shrine": {
+      "name": "Shrine"
+    },
+    "sanctum": {
+      "name": "Sanctum"
+    }
+  }
+}

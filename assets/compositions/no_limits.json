@@ -1,0 +1,24 @@
+{
+  "name": "No limits",
+  "slots": [
+    {
+      "allowedTypes": ["tank", "damage", "support"]
+    },
+    {
+      "allowedTypes": ["tank", "damage", "support"]
+    },
+    {
+      "allowedTypes": ["tank", "damage", "support"]
+    },
+    {
+      "allowedTypes": ["tank", "damage", "support"]
+    },
+    {
+      "allowedTypes": ["tank", "damage", "support"]
+    },
+    {
+      "allowedTypes": ["tank", "damage", "support"]
+    }
+  ]
+}
+

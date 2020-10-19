@@ -1,0 +1,216 @@
+/* Metropolis-Thin - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Metropolis Thin normal'),
+    local('Metropolis-Thinnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-Thin.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-ThinItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src:
+    local('Metropolis Thin italic'),
+    local('Metropolis-Thinitalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-ThinItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-ExtraLight - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Metropolis ExtraLight normal'),
+    local('Metropolis-ExtraLightnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-ExtraLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-ExtraLightItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src:
+    local('Metropolis ExtraLight italic'),
+    local('Metropolis-ExtraLightitalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-ExtraLightItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-Light - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Metropolis Light normal'),
+    local('Metropolis-Lightnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-Light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-LightItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Metropolis Light italic'),
+    local('Metropolis-Lightitalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-LightItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-Regular - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Metropolis Regular normal'),
+    local('Metropolis-Regularnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-RegularItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Metropolis Regular italic'),
+    local('Metropolis-Regularitalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-RegularItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-Medium - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Metropolis Medium normal'),
+    local('Metropolis-Mediumnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-Medium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-MediumItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src:
+    local('Metropolis Medium italic'),
+    local('Metropolis-Mediumitalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-MediumItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-SemiBold - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Metropolis SemiBold normal'),
+    local('Metropolis-SemiBoldnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-SemiBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-SemiBoldItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src:
+    local('Metropolis SemiBold italic'),
+    local('Metropolis-SemiBolditalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-SemiBoldItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-Bold - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Metropolis Bold normal'),
+    local('Metropolis-Boldnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-Bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-BoldItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Metropolis Bold italic'),
+    local('Metropolis-Bolditalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-BoldItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-ExtraBold - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Metropolis ExtraBold normal'),
+    local('Metropolis-ExtraBoldnormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-ExtraBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-ExtraBoldItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src:
+    local('Metropolis ExtraBold italic'),
+    local('Metropolis-ExtraBolditalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-ExtraBoldItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}
+
+/* Metropolis-Black - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Metropolis Black normal'),
+    local('Metropolis-Blacknormal'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-Black.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+
+}
+
+/* Metropolis-BlackItalic - latin */
+@font-face {
+  font-family: 'Metropolis';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src:
+    local('Metropolis Black italic'),
+    local('Metropolis-Blackitalic'),
+    url('./Metropolis/Fonts/Webfonts/WOFF2/Metropolis-BlackItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+}

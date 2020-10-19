@@ -1,0 +1,15 @@
+{
+  "name": "Busan",
+  "type": "control",
+  "points": {
+    "downtown": {
+      "name": "Downtown"
+    },
+    "sanctuary": {
+      "name": "Sanctuary"
+    },
+    "meka_base": {
+      "name": "Meka Base"
+    }
+  }
+}

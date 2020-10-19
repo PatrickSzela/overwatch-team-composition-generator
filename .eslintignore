@@ -1,0 +1,4 @@
+/.nuxt/**
+/dist/**
+/plugins/modernizr.js
+/app/router.scrollBehavior.js

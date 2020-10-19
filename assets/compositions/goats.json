@@ -1,0 +1,24 @@
+{
+  "name": "Goats",
+  "extends": "no_limits",
+  "slots": [
+    {
+      "hero": "dva"
+    },
+    {
+      "hero": "reinhardt"
+    },
+    {
+      "hero": "zarya"
+    },
+    {
+      "hero": "brigitte"
+    },
+    {
+      "hero": "lucio"
+    },
+    {
+      "hero": "moira"
+    }
+  ]
+}

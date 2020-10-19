@@ -1,0 +1,15 @@
+{
+  "name": "Ilios",
+  "type": "control",
+  "points": {
+    "lighthouse": {
+      "name": "Lighthouse"
+    },
+    "well": {
+      "name": "Well"
+    },
+    "ruins": {
+      "name": "Ruins"
+    }
+  }
+}

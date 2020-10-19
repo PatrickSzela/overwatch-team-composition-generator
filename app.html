@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }} class="no-js">
+  <head {{ HEAD_ATTRS }}>
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+    </script>
+
+    {{ HEAD }}
+  </head>
+  <body {{ BODY_ATTRS }}>
+    <noscript>
+      <div class="mdc-card">
+        <div class="mdc-card__primary">
+          <h2>This website requires enabled JavaScript</h2>
+          <h6>
+            If you are concerned about your privacy - don't worry, because no data is being collected while using this
+            website. You can even enable your adblock if you're using one - this website is completely ad free.
+          </h6>
+        </div>
+      </div>
+    </noscript>
+
+    {{ APP }}
+  </body>
+</html>

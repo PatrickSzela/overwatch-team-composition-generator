@@ -1,0 +1,24 @@
+{
+  "name": "Dive",
+  "extends": "2_2_2",
+  "slots": [
+    {
+      "hero": "dva"
+    },
+    {
+      "hero": "winston"
+    },
+    {
+      "hero": "genji"
+    },
+    {
+      "hero": "tracer"
+    },
+    {
+      "hero": "lucio"
+    },
+    {
+      "hero": "zenyatta"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+$max-width: 1200px;
+
+$background-image: '~assets/images/background.jpg';
+$background-color: #f9eff5;
+
+$font-family-default: Roboto, sans-serif;
+$font-family-primary: 'Big Noodle Too', Teko, 'Roboto Condensed', $font-family-default;
+$font-family-secondary: Metropolis, $font-family-default;
+
+$text-uppercase-margin-bottom: -0.175em; // hack to deal with uppercase leaving empty space below letters
+$text-primary-centered-left-margin: -0.175em; // hack to deal with italic style on centered text
+
+// mdc overrides
+// layout grid
+$mdc-layout-grid-default-margin: (
+  desktop: 48px,
+  tablet: 32px,
+  phone: 24px
+);
+
+$mdc-layout-grid-default-gutter: (
+  desktop: 32px,
+  tablet: 32px,
+  phone: 24px
+);
+
+// elevation
+$mdc-elevation-umbra-opacity: 0.11;
+$mdc-elevation-penumbra-opacity: 0.05;
+$mdc-elevation-ambient-opacity: 0.03;
+
+// shape
+$mdc-shape-medium-component-radius: 0px;
+$mdc-shape-small-component-radius: 2px;
+
+// theme
+$mdc-theme-primary: #00a5e2;
+$mdc-theme-secondary: #ff9c00;
+$mdc-theme-background: $background-color;
+
+$mdc-theme-on-primary: white;
+$mdc-theme-on-secondary: white;
+$mdc-theme-on-surface: rgb(51, 51, 51);
+
+$mdc-theme-surface-primary: #e8e8ea;
+$mdc-theme-surface-secondary: rgba(64, 82, 117, 0.9); //rgba(39, 56, 86, 0.85);
+$mdc-theme-surface: $mdc-theme-surface-primary;
+
+// mdc-button
+$mdc-button-height: 40px;
+$mdc-button-horizontal-padding: 16px;
+
+// mdc-list
+$mdc-list-single-line-height: 36px; // doesn't work?
+
+// mdc-menu
+$mdc-menu-ink-color: white;
+
+// mdc-select
+$mdc-select-ink-color: white;
+$mdc-select-dropdown-color: #ffffff;
+$mdc-select-dropdown-opacity: 1;
+$mdc-select-height: 40px;
+$mdc-select-arrow-padding: 42px;
+
+// mdc-snackbar
+$mdc-snackbar-fill-color: $mdc-theme-surface-secondary;
+$mdc-snackbar-label-ink-color: white;
+$mdc-snackbar-label-type-scale: 'subtitle2';
+//$mdc-snackbar-dismiss-ink-color: white; // doesn't work?
+//$mdc-snackbar-action-ink-color: white; // doesn't work?
+$mdc-snackbar-padding: 14px 12px;
+
+// mdc-typography
+$mdc-typography-font-family: $font-family-default;
+
+$typography-font-family-primary-base: (
+  font-family: $font-family-primary,
+  font-weight: 400,
+  text-transform: uppercase,
+  font-style: italic,
+  letter-spacing: -0.01em,
+  line-height: 1em,
+  transform: scale(0.925, 1),
+  margin: 0.5em calc(((100% * 0.925) - 100%) / 2) 0.5em + $text-uppercase-margin-bottom // reverse scale changing width and a hack to deal with uppercase leaving empty space below letters
+);
+
+$typography-font-family-secondary-base: (
+  font-family: $font-family-secondary,
+  font-weight: 500,
+  text-transform: uppercase,
+  font-style: normal,
+  letter-spacing: 0.01786em,
+  line-height: 1.25em,
+  transform: none,
+  margin: 0.5em 0 0.5em + $text-uppercase-margin-bottom // hack to deal with uppercase leaving empty space below letters
+);
+
+$mdc-typography-styles-headline1: map-merge($typography-font-family-primary-base, (
+  font-size: 2.5em
+));
+
+$mdc-typography-styles-headline2: map-merge($typography-font-family-primary-base, (
+  font-size: 2.25em
+));
+
+$mdc-typography-styles-headline3: map-merge($typography-font-family-primary-base, (
+  font-size: 2em
+));
+
+$mdc-typography-styles-headline4: map-merge($typography-font-family-primary-base, (
+  font-size: 1.75em
+));
+
+$mdc-typography-styles-headline5: map-merge($typography-font-family-primary-base, (
+  font-size: 1.5em
+));
+
+$mdc-typography-styles-headline6: map-merge($typography-font-family-primary-base, (
+  font-size: 1.25em
+));
+
+$mdc-typography-styles-subtitle1: $typography-font-family-secondary-base;
+$mdc-typography-styles-subtitle2: $typography-font-family-secondary-base;
+
+$mdc-typography-styles-button: map-merge($typography-font-family-secondary-base, (
+  font-weight: 700,
+  font-size: 0.9375em,
+  letter-spacing: 0,
+  margin: 0 // original margin would get applied to .mdc-button, not .mdc-button__label
+));
+
+$mdc-typography-styles-caption: map-merge($typography-font-family-secondary-base, (
+  letter-spacing: 0,
+  margin: 0,
+  text-transform: none,
+  font-weight: 400
+));
+
+$mdc-typography-styles-overline: map-merge($typography-font-family-secondary-base, (
+  margin: 0,
+  margin-bottom: $text-uppercase-margin-bottom,
+  font-weight: 600
+));
+
+$headline-media-sizes: (
+  'headline1': (
+    phone: 2.5em,
+    tablet: 3em,
+    desktop: 3em,
+    desktop-big: 3.5em
+  ),
+  'headline2': (
+    phone: 2.25em,
+    tablet: 2.625em,
+    desktop: 2.625em,
+    desktop-big: 3em
+  ),
+  'headline3': (
+    phone: 2em,
+    tablet: 2.25em,
+    desktop: 2.25em,
+    desktop-big: 2.5em
+  ),
+  'headline4': (
+    phone: 1.75em,
+    tablet: 2em,
+    desktop: 2em,
+    desktop-big: 2.25em
+  ),
+  'headline5': (
+    phone: 1.75em,
+    tablet: 1.75em,
+    desktop: 1.75em,
+    desktop-big: 2em
+  ),
+  'headline6': (
+    phone: 1.5em,
+    tablet: 1.5em,
+    desktop: 1.5em,
+    desktop-big: 1.75em
+  )
+)

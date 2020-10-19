@@ -1,0 +1,96 @@
+@import '~assets/scss/variables';
+
+@mixin modernizr($feature, $property, $supported-value, $not-supported-value) {
+  .#{$feature} & {
+    #{$property}: $supported-value;
+  }
+
+  .no-#{$feature} &,
+  .no-js & {
+    #{$property}: $not-supported-value;
+  }
+}
+
+@mixin webp($file, $property: 'background-image', $url: true) {
+  @include modernizr('webp', $property, url('#{$file}?webp'), url($file));
+}
+
+@mixin interactive-border($border-width: 5px, $border-radius: inherit, $inset: false) {
+  // border with shadow that can be transitioned
+  &::before {
+    content: '';
+    position: absolute;
+    background: inherit;
+    border: $border-width solid white;
+    opacity: 0;
+    transition: opacity 0.075s;
+    z-index: -1;
+    border-radius: $border-radius;
+
+    @if $inset {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    } @else {
+      top: -$border-width;
+      right: -$border-width;
+      bottom: -$border-width;
+      left: -$border-width;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+}
+
+@mixin text-primary-centered {
+  margin-left: calc(((100% * 0.925) - 100%) / 2 + #{$text-primary-centered-left-margin});
+}
+
+@mixin headline-media-sizes($headline) {
+  @each $size in map-keys(map-get($headline-media-sizes, $headline)) {
+    @if $size != 'desktop-big' {
+      @include mdc-layout-grid-media-query_($size) {
+        font-size: map-get(map-get($headline-media-sizes, $headline), $size);
+      }
+    } @else {
+      @media (min-width: $max-width) {
+        font-size: map-get(map-get($headline-media-sizes, $headline), $size);
+      }
+    }
+  }
+}
+
+@mixin scrollbar($selector) {
+  @at-root #{$selector} {
+    scrollbar-color: white transparent;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    &:hover::-webkit-scrollbar-track {
+      opacity: 1;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: white;
+      //border-radius: 4px;
+      border: 2px solid white;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+}

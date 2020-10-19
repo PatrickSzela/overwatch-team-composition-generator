@@ -1,0 +1,15 @@
+{
+  "name": "Oasis",
+  "type": "control",
+  "points": {
+    "city_center": {
+      "name": "City Center"
+    },
+    "gardens": {
+      "name": "Gardens"
+    },
+    "university": {
+      "name": "University"
+    }
+  }
+}

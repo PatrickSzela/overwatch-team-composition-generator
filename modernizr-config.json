@@ -1,0 +1,13 @@
+{
+  "minify": true,
+  "options": ["setClasses"],
+  "feature-detects": [
+    "test/fullscreen-api",
+    "test/css/cssgrid",
+    "test/css/filters",
+    "test/css/flexbox",
+    "test/img/webp-alpha",
+    "test/img/webp-lossless",
+    "test/img/webp"
+  ]
+}

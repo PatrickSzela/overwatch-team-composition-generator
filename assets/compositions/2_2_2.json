@@ -1,0 +1,29 @@
+{
+  "name": "2-2-2",
+  "slots": [
+    {
+      "allowedTypes": ["tank"],
+      "hero": ""
+    },
+    {
+      "allowedTypes": ["tank"],
+      "hero": ""
+    },
+    {
+      "allowedTypes": ["damage"],
+      "hero": ""
+    },
+    {
+      "allowedTypes": ["damage"],
+      "hero": ""
+    },
+    {
+      "allowedTypes": ["support"],
+      "hero": ""
+    },
+    {
+      "allowedTypes": ["support"],
+      "hero": ""
+    }
+  ]
+}

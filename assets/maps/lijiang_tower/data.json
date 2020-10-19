@@ -1,0 +1,15 @@
+{
+  "name": "Lijiang Tower",
+  "type": "control",
+  "points": {
+    "night_market": {
+      "name": "Night Market"
+    },
+    "garden": {
+      "name": "Garden"
+    },
+    "control_center": {
+      "name": "Control Center"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 2,
+    "eslint.enable": true,
+    "search.exclude": {
+        "**/.nuxt": true,
+        "**/dist": true,
+        "**/assets/fonts": true
+    },
+}

@@ -1,0 +1,3 @@
+[submodule "assets/fonts/Metropolis"]
+	path = assets/fonts/Metropolis
+	url = https://github.com/chrismsimpson/Metropolis
