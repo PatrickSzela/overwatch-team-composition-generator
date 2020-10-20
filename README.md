@@ -2,6 +2,8 @@
 
 Small website made for someone who should not be named that allows the user to create team composition of all heroes from Overwatch.
 
+### Please don't look at the code, it's so bad 😢
+
 ## Build Setup
 
 ``` bash

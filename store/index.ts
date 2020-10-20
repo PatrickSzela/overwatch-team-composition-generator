@@ -12,5 +12,9 @@ export const getters: GetterTree<RootState, RootState> = {
 };
 
 export const mutations: MutationTree<RootState> = {
-  map: (state, value: string) => (state.map = value)
+  map: (state, value: string) => (state.map = value),
+  randomize: (state) => {
+    const filtered = Object.keys(maps).filter((element) => element !== state.map);
+    state.map = filtered[Math.floor(Math.random() * filtered.length)];
+  }
 };

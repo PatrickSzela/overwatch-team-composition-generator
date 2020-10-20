@@ -41,6 +41,8 @@
           <h1 class="typography--display">Select a hero</h1>
 
           <div class="header__row header__row--map">
+            <icon size="28px" class="randomize-map" icon="random" title="Randomize map" @click="onRandomizeMap" />
+
             <span>Map:</span>
 
             <select-fixed id="mapSelect" v-model="selectedMapKey" name="map" enhanced>
@@ -138,6 +140,7 @@ import Vue from 'vue';
 import TheFooter from '~/components/TheFooter.vue';
 import OverwatchSpinner from '~/components/OverwatchSpinner.vue';
 import SelectFixed from '~/components/SelectFixed.vue';
+import Icon from '~/components/Icon.vue';
 import heroes, { filteredHeroes, Hero, HeroTypes } from '~/assets/heroes';
 import compositions, { Composition, CompositionSlot } from '~/assets/compositions';
 
@@ -167,7 +170,8 @@ export default Vue.extend({
     TeamCompositionGroup,
     TeamCompositionItem,
     SelectFixed,
-    TheFooter
+    TheFooter,
+    Icon
   },
   data() {
     return {
@@ -406,6 +410,9 @@ export default Vue.extend({
       } else {
         this.pinnedSlots = this.pinnedSlots.filter((item) => item !== slot);
       }
+    },
+    onRandomizeMap() {
+      this.$store.commit('randomize');
     }
   },
   layout: 'fullscreen'
@@ -608,5 +615,17 @@ main {
 
 .footer {
   padding: 0;
+}
+
+.randomize-map {
+  cursor: pointer;
+  // transform: rotate(45deg);
+  align-self: normal;
+  z-index: 2;
+  margin-left: 4px;
+
+  /deep/.icon__icon {
+    background-color: $mdc-theme-secondary;
+  }
 }
 </style>
